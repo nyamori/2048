@@ -1,7 +1,9 @@
 package my2048;
-
+/**
+ * 画出命令行下的背景
+ */
 public class Background {
-	// 关于背景显示和初始化数组
+
 	private int[][] aNum;
 	private int point, maxPoint;
 

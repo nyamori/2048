@@ -1,7 +1,9 @@
 package my2048;
-
+/**
+ * 玩家的操作
+ */
 public class Operation {
-	// 玩家的操作相关问题
+	
 	private int[][] aNumber;
 	private boolean isMove;
 	private int point;
@@ -12,7 +14,13 @@ public class Operation {
 		isMove = false;
 		point = 0;
 	}
-
+/**
+ * 各方向的移动逻辑是相同的。
+ * 以向右为例。
+ * 首先取右方方块向左判定，当可合并时，目标方块乘2，左方方块归零，左方方块变为目标方块； 
+ * 不可合并但可移动，则目标方块获得左方方块的值，左方方块归零，再从目标方块判定；
+ * 不可合并不可移动，左方方块成为目标方块。
+ */
 	private void right(int[][] number) {
 
 		for (int a = 0; a < 4; a++) {
@@ -126,10 +134,12 @@ public class Operation {
 		}
 
 	}
-
+/*
+ * 获取txt文本中的棋盘数据，根据存储方式，将字符串还原到相应数据中去。
+ */
 	private void back() throws Exception {
 		int j = 0, k = 0;
-		String a = new TxtOperation().readTxtFile("D:\\s2048.txt");
+		String a = new TxtOperation().readTxtFile("D:\\2048\\s2048.txt");
 		String[] a1 = a.split(" ");
 		for (int i = 0; i < 18; i++) {
 			if (i < 16) {
